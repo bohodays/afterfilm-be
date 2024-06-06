@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.afterfilm.afterfilm.repository.BoxOfficeMapper">
+
+    <resultMap id="boxOfficeResultMap" type="org.afterfilm.afterfilm.domain.BoxOffice">
+        <result property="rank" column="rank"/>
+        <result property="movieId" column="movieId"/>
+        <result property="title" column="title"/>
+        <result property="plot" column="plot"/>
+        <result property="rlsDate" column="rlsDate"/>
+        <result property="runtime" column="runtime"/>
+        <collection property="genres" ofType="string">
+            <result column="genre"/>
+        </collection>
+        <collection property="posterUrls" ofType="string">
+            <result column="posterUrl"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getBoxOffice" resultMap="boxOfficeResultMap">
+        <![CDATA[
+            SELECT BOD.MOVIE_RANK as `rank`
+                 , MM.DOCID as movieId
+                 , MM.MOVIE_TITLE as title
+                 , MM.PLOT as plot
+                 , MM.RLS_DATE as rlsDate
+                 , MM.RUNTIME as runtime
+                 , MGM.GENRE as genre
+                 , MP.POSTER_URL as posterUrl
+            FROM MOVIE_MST MM
+               , BOX_OFFICE_DAY BOD
+               , MOVIE_GENRE_MAP MGM
+               , MOVIE_POSTER MP
+            WHERE MM.DOCID = BOD.DOCID
+            AND MM.DOCID = MGM.DOCID
+            AND MM.DOCID = MP.DOCID
+              AND DATE_FORMAT(now() - 1, "%Y%m%d%H%i%s")
+        ]]>
+    </select>
+
+</mapper>
