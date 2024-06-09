@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.afterfilm.afterfilm.repository.MovieDetailMapper">
+
+    <resultMap id="movieDetailResultMap" type="org.afterfilm.afterfilm.domain.MovieDetail">
+        <result property="movieId" column="movieId"/>
+        <result property="title" column="title"/>
+        <result property="plot" column="plot"/>
+        <result property="rlsDate" column="rlsDate"/>
+        <result property="runtime" column="runtime"/>
+        <result property="rating" column="rating" />
+        <result property="nation" column="nation" />
+        <collection property="genres" ofType="string">
+            <result column="genre"/>
+        </collection>
+        <collection property="posterUrls" ofType="string">
+            <result column="posterUrl"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getMovieDetail" resultMap="movieDetailResultMap" parameterType="string">
+        <![CDATA[
+            SELECT MM.DOCID as movieId
+                 , MM.MOVIE_TITLE as title
+                 , MM.PLOT as plot
+                 , MM.RLS_DATE as rlsDate
+                 , MM.RUNTIME as runtime
+                 , MGM.GENRE as genre
+                 , MM.RATING as rating
+                 , MM.NATION as nation
+                 , MP.POSTER_URL as posterUrl
+            FROM MOVIE_MST MM
+               , MOVIE_GENRE_MAP MGM
+               , MOVIE_POSTER MP
+            WHERE MM.DOCID = MGM.DOCID
+            AND MM.DOCID = MP.DOCID
+            AND MM.DOCID = #{docId}
+        ]]>
+    </select>
+
+
+</mapper>

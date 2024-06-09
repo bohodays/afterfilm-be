@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.afterfilm.afterfilm.repository.MovieInfoMapper" >
+
+    <select id="getMovieStaff" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieStaff">
+        <![CDATA[
+            SELECT MS.DOCID as movieId
+                 , MS.STAFF_ID as staffId
+                 , MS.STAFF_NM as staffNm
+                 , MS.STAFF_EN_NM as staffEnNm
+                 , MS.STAFF_ROLE as staffRole
+            FROM MOVIE_STAFF MS
+            WHERE MS.DOCID = #{docId}
+        ]]>
+    </select>
+
+    <select id="getMovieVideo" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieVideo">
+        <![CDATA[
+            SELECT MV.DOCID as movieId
+                 , MV.VOD_CLASS as title
+                 , MV.VOD_URL as vodUrls
+            FROM MOVIE_VOD MV
+            WHERE MV.DOCID = #{docId}
+        ]]>
+    </select>
+
+    <select id="getMovieStillsCut" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieStillsCut">
+        <![CDATA[
+            SELECT MSC.DOCID as movieId
+                 , MSC.STLLS_URL as stillsUrl
+            FROM MOVIE_STLLS_CUT MSC
+            WHERE MSC.DOCID = #{docId}
+        ]]>
+    </select>
+
+</mapper>
