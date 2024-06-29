@@ -1,7 +1,7 @@
-package org.afterfilm.afterfilm.domain;
+package org.afterfilm.afterfilm.domain.movie;
 
-import org.afterfilm.afterfilm.dto.MovieDetailDto;
-import org.afterfilm.afterfilm.dto.MovieVideoDto;
+import org.afterfilm.afterfilm.dto.movie.MovieDetailDto;
+import org.afterfilm.afterfilm.dto.movie.MovieVideoDto;
 
 public class MovieVideo {
 

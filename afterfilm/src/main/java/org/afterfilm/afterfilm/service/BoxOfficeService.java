@@ -2,8 +2,8 @@ package org.afterfilm.afterfilm.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.afterfilm.afterfilm.domain.BoxOffice;
-import org.afterfilm.afterfilm.dto.BoxOfficeDto;
+import org.afterfilm.afterfilm.domain.movie.BoxOffice;
+import org.afterfilm.afterfilm.dto.movie.BoxOfficeDto;
 import org.afterfilm.afterfilm.repository.BoxOfficeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

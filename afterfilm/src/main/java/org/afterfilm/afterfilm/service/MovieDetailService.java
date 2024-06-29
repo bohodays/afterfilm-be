@@ -2,8 +2,11 @@ package org.afterfilm.afterfilm.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.afterfilm.afterfilm.domain.MovieDetail;
-import org.afterfilm.afterfilm.dto.*;
+import org.afterfilm.afterfilm.dto.movie.MovieDetailDto;
+import org.afterfilm.afterfilm.dto.movie.MovieStaffDto;
+import org.afterfilm.afterfilm.dto.movie.MovieStillsCutDto;
+import org.afterfilm.afterfilm.dto.movie.MovieVideoDto;
+import org.afterfilm.afterfilm.dto.movie.*;
 import org.afterfilm.afterfilm.repository.MovieDetailMapper;
 import org.afterfilm.afterfilm.repository.MovieInfoMapper;
 import org.springframework.stereotype.Service;
