@@ -1,9 +1,9 @@
 package org.afterfilm.afterfilm.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.afterfilm.afterfilm.domain.BoxOffice;
-import org.afterfilm.afterfilm.dto.BoxOfficeDto;
-import org.afterfilm.afterfilm.dto.MovieDetailDto;
+import org.afterfilm.afterfilm.domain.movie.BoxOffice;
+import org.afterfilm.afterfilm.dto.movie.BoxOfficeDto;
+import org.afterfilm.afterfilm.dto.movie.MovieDetailDto;
 import org.afterfilm.afterfilm.exception.error.ErrorCode;
 import org.afterfilm.afterfilm.response.ErrorResponse;
 import org.afterfilm.afterfilm.response.SuccessResponse;

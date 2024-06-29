@@ -1,13 +1,10 @@
-package org.afterfilm.afterfilm.domain;
+package org.afterfilm.afterfilm.domain.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.afterfilm.afterfilm.dto.MovieDetailDto;
-import org.afterfilm.afterfilm.dto.MovieStaffDto;
-import org.afterfilm.afterfilm.dto.MovieStillsCutDto;
-import org.afterfilm.afterfilm.dto.MovieVideoDto;
+import org.afterfilm.afterfilm.dto.movie.BoxOfficeDto;
 
 import java.util.List;
 
@@ -15,30 +12,25 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovieDetail {
+public class BoxOffice {
 
     private String movieId;
     private String title;
     private String plot;
+    private int rank;
     private String rlsDate;
     private int runtime;
-    private String rating;
-    private String nation;
     private List<String> genres;
     private List<String> posterUrls;
-    private List<MovieVideoDto> videos;
-    private List<MovieStaffDto> staff;
-    private List<MovieStillsCutDto> stillsCut;
 
-    public MovieDetailDto toDto() {
-        return MovieDetailDto.builder()
+    public BoxOfficeDto toDto() {
+        return BoxOfficeDto.builder()
                 .movieId(movieId)
                 .title(title)
                 .plot(plot)
+                .rank(rank)
                 .rlsDate(rlsDate)
                 .runtime(runtime)
-                .rating(rating)
-                .nation(nation)
                 .genres(genres)
                 .posterUrls(posterUrls)
                 .build();

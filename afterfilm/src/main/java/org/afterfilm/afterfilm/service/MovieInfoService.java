@@ -2,9 +2,9 @@ package org.afterfilm.afterfilm.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.afterfilm.afterfilm.dto.MovieStaffDto;
-import org.afterfilm.afterfilm.dto.MovieStillsCutDto;
-import org.afterfilm.afterfilm.dto.MovieVideoDto;
+import org.afterfilm.afterfilm.dto.movie.MovieStaffDto;
+import org.afterfilm.afterfilm.dto.movie.MovieStillsCutDto;
+import org.afterfilm.afterfilm.dto.movie.MovieVideoDto;
 import org.afterfilm.afterfilm.repository.MovieInfoMapper;
 import org.springframework.stereotype.Service;
 

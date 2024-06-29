@@ -5,7 +5,7 @@
 
 <mapper namespace="org.afterfilm.afterfilm.repository.BoxOfficeMapper">
 
-    <resultMap id="boxOfficeResultMap" type="org.afterfilm.afterfilm.domain.BoxOffice">
+    <resultMap id="boxOfficeResultMap" type="org.afterfilm.afterfilm.domain.movie.BoxOffice">
         <result property="rank" column="rank"/>
         <result property="movieId" column="movieId"/>
         <result property="title" column="title"/>

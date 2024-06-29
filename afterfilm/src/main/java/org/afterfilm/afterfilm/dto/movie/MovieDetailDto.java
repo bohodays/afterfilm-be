@@ -1,7 +1,10 @@
-package org.afterfilm.afterfilm.dto;
+package org.afterfilm.afterfilm.dto.movie;
 
 import lombok.Builder;
 import lombok.Data;
+import org.afterfilm.afterfilm.dto.movie.MovieStaffDto;
+import org.afterfilm.afterfilm.dto.movie.MovieStillsCutDto;
+import org.afterfilm.afterfilm.dto.movie.MovieVideoDto;
 
 import java.util.List;
 

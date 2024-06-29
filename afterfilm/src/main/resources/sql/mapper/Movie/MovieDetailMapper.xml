@@ -5,7 +5,7 @@
 
 <mapper namespace="org.afterfilm.afterfilm.repository.MovieDetailMapper">
 
-    <resultMap id="movieDetailResultMap" type="org.afterfilm.afterfilm.domain.MovieDetail">
+    <resultMap id="movieDetailResultMap" type="org.afterfilm.afterfilm.domain.movie.MovieDetail">
         <result property="movieId" column="movieId"/>
         <result property="title" column="title"/>
         <result property="plot" column="plot"/>
