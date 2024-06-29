@@ -5,7 +5,7 @@
 
 <mapper namespace="org.afterfilm.afterfilm.repository.MovieInfoMapper" >
 
-    <select id="getMovieStaff" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieStaff">
+    <select id="getMovieStaff" parameterType="string" resultType="org.afterfilm.afterfilm.domain.movie.MovieStaff">
         <![CDATA[
             SELECT MS.DOCID as movieId
                  , MS.STAFF_ID as staffId
@@ -17,7 +17,7 @@
         ]]>
     </select>
 
-    <select id="getMovieVideo" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieVideo">
+    <select id="getMovieVideo" parameterType="string" resultType="org.afterfilm.afterfilm.domain.movie.MovieVideo">
         <![CDATA[
             SELECT MV.DOCID as movieId
                  , MV.VOD_CLASS as title
@@ -27,7 +27,7 @@
         ]]>
     </select>
 
-    <select id="getMovieStillsCut" parameterType="string" resultType="org.afterfilm.afterfilm.domain.MovieStillsCut">
+    <select id="getMovieStillsCut" parameterType="string" resultType="org.afterfilm.afterfilm.domain.movie.MovieStillsCut">
         <![CDATA[
             SELECT MSC.DOCID as movieId
                  , MSC.STLLS_URL as stillsUrl

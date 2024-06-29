@@ -1,4 +1,4 @@
-package org.afterfilm.afterfilm.dto;
+package org.afterfilm.afterfilm.dto.movie;
 
 import lombok.Builder;
 import lombok.Data;
